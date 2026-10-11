@@ -10,7 +10,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { createInterviewManifest, hashInterviewManifest, interviewMemoForHash } from '../server/interview-proof.js';
+import { createInterviewManifest, hashInterviewManifest, interviewMemoForHash } from '../server/services/interview-proof.js';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 let processHandle;
