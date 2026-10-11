@@ -252,7 +252,6 @@ function render() {
   app.innerHTML = state.view === 'verification'
     ? (params.has('interview-proof') ? renderInterviewProofVerification() : renderVerificationPage())
     : renderShell();
-  bindEvents();
 }
 
   return { render };
