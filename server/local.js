@@ -2,12 +2,12 @@ import 'dotenv/config';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer as createViteServer } from 'vite';
-import { createBuildProofApp } from './server.js';
+import { createBuildProofApp } from './app.js';
 
 let vite = null;
 if (process.env.NODE_ENV !== 'production') {
   vite = await createViteServer({
-    root: path.join(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+    root: path.join(path.dirname(path.dirname(fileURLToPath(import.meta.url))), 'src'),
     server: { middlewareMode: true },
     appType: 'custom',
   });

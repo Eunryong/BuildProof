@@ -12,7 +12,7 @@ import {
 } from './interview-proof.js';
 
 let root = '';
-try { root = path.dirname(fileURLToPath(import.meta.url)); } catch { /* Workers do not expose a module file URL. */ }
+try { root = path.dirname(path.dirname(fileURLToPath(import.meta.url))); } catch { /* Workers do not expose a module file URL. */ }
 const memoProgram = 'MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr';
 const browserRpcMethods = new Set(['getLatestBlockhash', 'sendTransaction', 'getSignatureStatuses', 'getBlockHeight', 'getTransaction']);
 const base58Alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';

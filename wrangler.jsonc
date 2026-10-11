@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "buildproof",
-  "main": "worker.js",
+  "main": "cloudflare/worker.js",
   "workers_dev": true,
   "routes": [
     {

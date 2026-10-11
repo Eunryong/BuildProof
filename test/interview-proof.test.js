@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { createInterviewManifest, hashInterviewManifest } from '../interview-proof.js';
+import { createInterviewManifest, hashInterviewManifest } from '../server/interview-proof.js';
 
 test('interview proof manifest contains only the consented report fields and hashes deterministically', () => {
   const manifest = createInterviewManifest({

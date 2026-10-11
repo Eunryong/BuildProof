@@ -1,6 +1,6 @@
 import { httpServerHandler } from 'cloudflare:node';
 import { env } from 'cloudflare:workers';
-import { createBuildProofApp } from './server.js';
+import { createBuildProofApp } from '../server/app.js';
 
 const runtimeEnvironment = {
   ...process.env,

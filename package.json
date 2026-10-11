@@ -7,9 +7,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node server-local.js",
+    "dev": "node server/local.js",
     "build": "vite build",
-    "start": "NODE_ENV=production node server-local.js",
+    "start": "NODE_ENV=production node server/local.js",
     "deploy": "npm run build && wrangler deploy",
     "test": "node --test"
   },

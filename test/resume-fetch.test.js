@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { isPublicIpv4, validateResumeUrl } from '../resume-fetch.js';
+import { isPublicIpv4, validateResumeUrl } from '../server/resume-fetch.js';
 
 test('resume link accepts a public HTTPS direct-file URL', () => {
   const url = validateResumeUrl('https://portfolio.example.org/files/resume.pdf');

@@ -10,7 +10,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { createInterviewManifest, hashInterviewManifest, interviewMemoForHash } from '../interview-proof.js';
+import { createInterviewManifest, hashInterviewManifest, interviewMemoForHash } from '../server/interview-proof.js';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 let processHandle;
@@ -36,7 +36,7 @@ async function freePort() {
 async function startServer(overrides = {}) {
   port = await freePort();
   baseUrl = `http://127.0.0.1:${port}`;
-  processHandle = spawn(process.execPath, ['server-local.js'], {
+  processHandle = spawn(process.execPath, ['server/local.js'], {
     cwd: root,
     env: { ...process.env, PORT: String(port), BUILDPROOF_DATA_DIR: dataDir, HOST: '127.0.0.1', SOLANA_RPC_URL: mockRpcUrl, ...overrides },
     stdio: ['ignore', 'pipe', 'pipe'],

@@ -3,7 +3,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { createInterviewService, InterviewServiceError } from '../interview-service.js';
+import { createInterviewService, InterviewServiceError } from '../server/interview-service.js';
 
 const profile = {
   candidateSummary: 'AI engineer with experience building a retrieval service.',
