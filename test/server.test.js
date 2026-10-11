@@ -110,6 +110,12 @@ test('submission review requires all checks and survives a server restart', asyn
   assert.equal(home.status, 200);
   assert.match(await home.text(), /BuildProof/);
 
+  const aiStatusResponse = await fetch(`${baseUrl}/api/ai/status`);
+  assert.equal(aiStatusResponse.status, 200);
+  const aiStatus = await aiStatusResponse.json();
+  assert.equal(typeof aiStatus.configured, 'boolean');
+  assert.equal(aiStatus.model, 'gemini-3.8-flash');
+
   for (const route of ['/interview', `/interviews/${savedSessionId}`, `/reports/${savedReportId}`, '/review', '/proofs']) {
     const page = await fetch(`${baseUrl}${route}`);
     assert.equal(page.status, 200, `page route ${route} should load directly`);
