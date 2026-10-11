@@ -19,7 +19,8 @@ import {
   isInterviewProofManifest,
 } from './services/interview-proof.js';
 
-const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+let root = '';
+try { root = path.dirname(path.dirname(fileURLToPath(import.meta.url))); } catch { /* Workers do not expose a module file URL. */ }
 
 export async function createBuildProofApp({ runtimeEnvironment = process.env, cloudflareEnv = null, vite = null } = {}) {
   const port = Number(runtimeEnvironment.PORT || 8891);
